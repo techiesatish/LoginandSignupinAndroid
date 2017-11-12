@@ -50,6 +50,13 @@ public class LoginActivity extends AppCompatActivity {
         Login_signup_here=(TextView)findViewById(R.id.tv_signuphere);
         showPWD=(CheckBox)findViewById(R.id.show_pwd);
         Login_Button = (Button) findViewById(R.id.btn_login);
+        Login_signup_here.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(LoginActivity.this,Signup.class);
+                startActivity(intent);
+            }
+        });
         showPWD.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
         @Override
 
@@ -122,14 +129,11 @@ public class LoginActivity extends AppCompatActivity {
                 catch (JSONException e) {
                     e.printStackTrace();
                 }
-
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
                 error.printStackTrace();
-
             }
         })
 
@@ -138,7 +142,6 @@ public class LoginActivity extends AppCompatActivity {
                 Map<String, String> param = new HashMap<String, String>();
                 param.put("mobile", login_userMob);
                 param.put("password",login_userPass);
-
                 return param;
             }
 
@@ -148,5 +151,4 @@ public class LoginActivity extends AppCompatActivity {
         postRequest.setRetryPolicy(policy);
         requestQueue.add(postRequest);
     }
-
 }
