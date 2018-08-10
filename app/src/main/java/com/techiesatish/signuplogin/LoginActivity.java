@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView Login_signup_here,Login_Forget_Pwd;
     Button Login_Button;
     CheckBox showPWD;
-    private static String LOGIN_URL = "http://techiesatish.com/demo_api/login.php";
+    private static String LOGIN_URL = "";
     Context context;
 
     @Override
