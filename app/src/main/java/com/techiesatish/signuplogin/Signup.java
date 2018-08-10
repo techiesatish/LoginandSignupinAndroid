@@ -31,7 +31,7 @@ public class Signup extends AppCompatActivity {
     EditText Name, Email, Mobile, Password ;
     Button btnSignup;
     TextView login_here;
-    private static String SIGNUP_URL = "http://techiesatish.com/demo_api/signup.php";
+    private static String SIGNUP_URL = "";
     Constants constants;
     CheckBox tAndC;
     @Override
